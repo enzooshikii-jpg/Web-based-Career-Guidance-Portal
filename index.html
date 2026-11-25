@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath | Minuyan National High School</title>
+
+<style>
+:root {
+--green: #174d3a;
+--green2: #246b4e;
+--maroon: #781f35;
+--light: #f4f7f4;
+--white: #ffffff;
+--dark: #26332c;
+--gray: #68736c;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+
+body {
+background: var(--light);
+color: var(--dark);
+}
+
+header {
+background: var(--green);
+color: white;
+padding: 16px 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.logo-area {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.logo-area img {
+width: 55px;
+height: 55px;
+object-fit: contain;
+background: white;
+border-radius: 50%;
+padding: 4px;
+}
+
+.logo-area h2 {
+font-size: 19px;
+}
+
+.logo-area p {
+font-size: 12px;
+color: #dce9df;
+margin-top: 4px;
+}
+
+nav {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+nav button {
+border: none;
+background: transparent;
+color: white;
+padding: 10px 12px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 14px;
+}
+
+nav button:hover,
+nav button.active {
+background: var(--maroon);
+}
+
+.page {
+display: none;
+min-height: 75vh;
+padding: 40px 8%;
+animation: fade .3s ease;
+}
+
+.page.active {
+display: block;
+}
+
+@keyframes fade {
+from { opacity: 0; transform: translateY(8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+background: linear-gradient(120deg, var(--green), var(--green2));
+color: white;
+padding: 65px 8%;
+border-radius: 12px;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 38px;
+margin-bottom: 15px;
+}
+
+.hero p {
+max-width: 700px;
+margin: auto;
+line-height: 1.7;
+}
+
+.btn {
+background: var(--maroon);
+color: white;
+border: none;
+padding: 12px 22px;
+border-radius: 6px;
+margin-top: 22px;
+cursor: pointer;
+font-size: 15px;
+}
+
+.btn:hover {
+opacity: .9;
+}
+
+.section-title {
+color: var(--green);
+margin-bottom: 18px;
+font-size: 27px;
+}
+
+.intro {
+line-height: 1.8;
+margin-bottom: 25px;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 18px;
+margin-top: 25px;
+}
+  .cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 18px;
+margin-top: 25px;
+}
+
+.card {
+background: white;
+padding: 23px;
+border-radius: 10px;
+box-shadow: 0 3px 12px rgba(0,0,0,.07);
+border-top: 5px solid var(--green);
+}
+
+.card h3 {
+color: var(--green);
+margin-bottom: 12px;
+}
+
+.card p,
+.card li {
+line-height: 1.6;
+color: var(--gray);
+}
+
+.card ul {
+padding-left: 20px;
+margin-top: 10px;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 12px;
+margin: 9px 0 17px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 15px;
+}
+
+label {
+font-weight: bold;
+color: var(--green);
+}
+
+.form-box {
+background: white;
+max-width: 500px;
+margin: 30px auto;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.question {
+background: white;
+padding: 20px;
+border-radius: 8px;
+margin-bottom: 15px;
+box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.question p {
+font-weight: bold;
+margin-bottom: 12px;
+}
+
+.question label {
+display: block;
+font-weight: normal;
+color: var(--dark);
+margin: 8px 0;
+}
+
+.question input {
+width: auto;
+margin: 0 7px 0 0;
+}
+
+.result {
+display: none;
+background: #e6f1e9;
+border-left: 5px solid var(--green);
+padding: 22px;
+border-radius: 8px;
+margin-top: 20px;
+line-height: 1.7;
+}
+
+.notice {
+background: #fff3e8;
+padding: 18px;
+border-left: 5px solid var(--maroon);
+border-radius: 6px;
+margin-top: 20px;
+line-height: 1.6;
+}
+
+footer {
+background: var(--green);
+color: white;
+text-align: center;
+padding: 22px;
+margin-top: 40px;
+line-height: 1.7;
+}
+
+#loginScreen {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+background: linear-gradient(135deg, var(--green), var(--maroon));
+}
+
+.login-box {
+background: white;
+width: 100%;
+max-width: 430px;
+padding: 35px;
+border-radius: 12px;
+text-align: center;
+}
+
+.login-box img {
+width: 90px;
+height: 90px;
+object-fit: contain;
+margin-bottom: 15px;
+}
+
+.login-box h1 {
+color: var(--green);
+font-size: 25px;
+margin-bottom: 8px;
+}
+
+.login-box p {
+color: var(--gray);
+line-height: 1.5;
+margin-bottom: 20px;
+}
+
+#website {
+display: none;
+}
+
+.logout {
+background: var(--maroon);
+}
+
+@media(max-width: 700px) {
+header {
+justify-content: center;
+text-align: center;
+}
+
+.logo-area {
+justify-content: center;
+}
+
+nav {
+justify-content: center;
+}
+
+nav button {
+font-size: 12px;
+padding: 8px;
+}
+
+.hero h1 {
+font-size: 29px;
+}
+  .page {
+padding: 25px 5%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+<div class="login-box">
+<img src="mnhs-logo.png" alt="Minuyan National High School Logo"
+onerror="this.style.display='none'">
+
+<h1>CareerPath</h1>
+<p>Minuyan National High School<br>
+Senior High School Strand Exploration Portal</>
+</p>
+
+<form onsubmit="login(event)">
+<label for="studentName">Enter Your Full Name</label>
+<input type="text" id="studentName"
+placeholder="Your full name" required>
+
+<button type="submit" class="btn" style="width:100%">
+Enter Website
+</button>
+</form>
+</div>
+</div>
+
+<!-- MAIN WEBSITE -->
+<div id="website">
+
+<header>
+<div class="logo-area">
+<img src="mnhs-logo.png" alt="MNHS Logo"
+onerror="this.style.display='none'">
+<div>
+<h2>CareerPath | MNHS</h2>
+<p>Minuyan National High School</p>
+</div>
+</div>
+
+<nav>
+<button class="active" onclick="showPage('home', this)">Home</button>
+<button onclick="showPage('assessment', this)">Assessment</button>
+<button onclick="showPage('strands', this)">Strands</button>
+<button onclick="showPage('subjects', this)">Subjects</button>
+<button onclick="showPage('courses', this)">College Courses</button>
+<button onclick="showPage('careers', this)">Careers</button>
+<button onclick="showPage('information', this)">Information</button>
+<button class="logout" onclick="logout()">Log Out</button>
+</nav>
+</header>
+
+<!-- HOME PAGE -->
+<section id="home" class="page active">
+<div class="hero">
+<h1>Welcome to CareerPath!</h1>
+<p>
+Your guide to discovering the right Senior High School strand.
+Explore different academic pathways, understand your interests,
+and learn about possible college courses and future careers.
+</p>
+<button class="btn" onclick="showPage('assessment')">
+Start Strand Assessment
+</button>
+</div>
+
+<h2 class="section-title" style="margin-top:40px">
+Welcome, <span id="welcomeName">Student</span>!
+</h2>
+
+<p class="intro">
+Choosing a Senior High School strand is an important step in
+preparing for your future. CareerPath was created to help Grade 10
+students understand the available strands and explore the possible
+opportunities connected to each one.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>Discover Your Interests</h3>
+<p>Answer the assessment questions to explore which strand may
+match your interests and preferences.</p>
+</div>
+
+<div class="card">
+<h3>Explore Strands</h3>
+<p>Learn about the different Senior High School strands and
+their areas of focus.</p>
+</div>
+
+<div class="card">
+<h3>Plan Your Future</h3>
+<p>Discover possible college courses and career opportunities
+connected to different educational pathways.</p>
+</div>
+</div>
+
+<div class="notice">
+<strong>Reminder:</strong> The assessment is only a guide. Your final
+strand choice should also consider your interests, abilities,
+goals, and the actual strand offerings of the school.
+</div>
+</section>
+
+<!-- ASSESSMENT PAGE -->
+<section id="assessment" class="page">
+<h2 class="section-title">Strand Interest Assessment</h2>
+
+<p class="intro">
+Answer each question honestly. Choose the option that best describes
+your interests. Your answers will help identify possible strands
+that you may want to explore.
+</p>
+  <form id="assessmentForm">
+
+<div class="question">
+<p>1. Which activity interests you the most?</p>
+<label><input type="radio" name="q1" value="STEM" required> Solving math and science problems</label>
+<label><input type="radio" name="q1" value="ABM"> Managing money or a business</label>
+<label><input type="radio" name="q1" value="HUMSS"> Reading, writing, and understanding people</label>
+<label><input type="radio" name="q1" value="TVL"> Learning practical and technical skills</label>
+<label><input type="radio" name="q1" value="TECHPRO"> Working with technology and computers</label>
+</div>
+
+<div class="question">
+<p>2. What kind of task would you enjoy?</p>
+<label><input type="radio" name="q2" value="STEM" required> Conducting experiments</label>
+<label><input type="radio" name="q2" value="ABM"> Planning a business</label>
+<label><input type="radio" name="q2" value="HUMSS"> Writing stories or expressing ideas</label>
+<label><input type="radio" name="q2" value="TVL"> Cooking, designing, or hands-on activities</label>
+<label><input type="radio" name="q2" value="TECHPRO"> Creating or exploring digital projects</label>
+</div>
+
+<div class="question">
+<p>3. Which subject do you find most interesting?</p>
+<label><input type="radio" name="q3" value="STEM" required> Mathematics and Science</label>
+<label><input type="radio" name="q3" value="ABM"> Business and Economics</label>
+<label><input type="radio" name="q3" value="HUMSS"> English and Social Studies</label>
+<label><input type="radio" name="q3" value="TVL"> Technology and Livelihood Education</label>
+<label><input type="radio" name="q3" value="TECHPRO"> Computer and Information Technology</label>
+</div>
+
+<div class="question">
+<p>4. What is one of your strengths?</p>
+<label><input type="radio" name="q4" value="STEM" required> Analyzing and solving problems</label>
+<label><input type="radio" name="q4" value="ABM"> Organizing and managing tasks</label>
+<label><input type="radio" name="q4" value="HUMSS"> Communicating and understanding others</label>
+<label><input type="radio" name="q4" value="TVL"> Doing practical activities</label>
+<label><input type="radio" name="q4" value="TECHPRO"> Using computers and digital tools</label>
+</div>
+    
+    <div class="question">
+<p>4. What is one of your strengths?</p>
+<label><input type="radio" name="q4" value="STEM" required> Analyzing and solving problems</label>
+<label><input type="radio" name="q4" value="ABM"> Organizing and managing tasks</label>
+<label><input type="radio" name="q4" value="HUMSS"> Communicating and understanding others</label>
+<label><input type="radio" name="q4" value="TVL"> Doing practical activities</label>
+<label><input type="radio" name="q4" value="TECHPRO"> Using computers and digital tools</label>
+</div>
+
+<div class="question">
+<p>5. Which future activity sounds interesting to you?</p>
+<label><input type="radio" name="q5" value="STEM" required> Designing solutions to scientific problems</label>
+<label><input type="radio" name="q5" value="ABM"> Starting or managing a business</label>
+<label><input type="radio" name="q5" value="HUMSS"> Helping communities and working with people</label>
+<label><input type="radio" name="q5" value="TVL"> Providing technical or practical services</label>
+<label><input type="radio" name="q5" value="TECHPRO"> Developing digital or computer projects</label>
+</div>
+
+<div class="question">
+<p>6. How do you prefer to learn?</p>
+<label><input type="radio" name="q6" value="STEM" required> Through experiments and problem-solving</label>
+<label><input type="radio" name="q6" value="ABM"> Through business activities and planning</label>
+<label><input type="radio" name="q6" value="HUMSS"> Through discussions and presentations</label>
+<label><input type="radio" name="q6" value="TVL"> Through hands-on practice</label>
+<label><input type="radio" name="q6" value="TECHPRO"> Through computer-based activities</label>
+</div>
+
+<div class="question">
+<p>7. Which environment would you prefer?</p>
+<label><input type="radio" name="q7" value="STEM" required> Laboratory or research environment</label>
+<label><input type="radio" name="q7" value="ABM"> Office or business environment</label>
+<label><input type="radio" name="q7" value="HUMSS"> Community or communication environment</label>
+<label><input type="radio" name="q7" value="TVL"> Workshop or service environment</label>
+<label><input type="radio" name="q7" value="TECHPRO"> Computer laboratory or digital workspace</label>
+</div>
+
+<div class="question">
+<p>8. What would you like to improve?</p>
+<label><input type="radio" name="q8" value="STEM" required> Logical and analytical thinking</label>
+<label><input type="radio" name="q8" value="ABM"> Leadership and financial skills</label>
+<label><input type="radio" name="q8" value="HUMSS"> Communication and social skills</label>
+<label><input type="radio" name="q8" value="TVL"> Technical and practical skills</label>
+<label><input type="radio" name="q8" value="TECHPRO"> Digital and computer skills</label>
+</div>
+    
+    <div class="question">
+<p>9. Which statement describes you best?</p>
+<label><input type="radio" name="q9" value="STEM" required> I enjoy discovering how things work.</label>
+<label><input type="radio" name="q9" value="ABM"> I enjoy planning and making decisions.</label>
+<label><input type="radio" name="q9" value="HUMSS"> I enjoy sharing ideas and helping others.</label>
+<label><input type="radio" name="q9" value="TVL"> I enjoy creating things and learning by doing.</label>
+<label><input type="radio" name="q9" value="TECHPRO"> I enjoy exploring technology and digital tools.</label>
+</div>
+
+<button type="submit" class="btn">Submit Assessment</button>
+</form>
+
+<div id="assessmentResult" class="result"></div>
+</section>
+
+<!-- STRANDS PAGE -->
+<section id="strands" class="page">
+<h2 class="section-title">Senior High School Strands</h2>
+
+<p class="intro">
+Senior High School offers different academic and technical pathways
+designed to help students prepare for college, employment,
+entrepreneurship, and further skills development.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>STEM</h3>
+<p><strong>Science, Technology, Engineering, and Mathematics</strong></p>
+<p>Focuses on scientific knowledge, mathematical reasoning,
+research, and problem-solving.</p>
+<ul>
+<li>Science</li>
+<li>Mathematics</li>
+<li>Research</li>
+<li>Technology</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ABM</h3>
+<p><strong>Accountancy, Business, and Management</strong></p>
+<p>Focuses on business operations, accounting, management,
+entrepreneurship, and financial literacy.</p>
+<ul>
+<li>Business Finance</li>
+<li>Accounting</li>
+<li>Marketing</li>
+<li>Management</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>HUMSS</h3>
+<p><strong>Humanities and Social Sciences</strong></p>
+<p>Focuses on communication, society, culture, politics,
+human behavior, and social issues.</p>
+<ul>
+<li>Communication</li>
+<li>Social Sciences</li>
+<li>Politics</li>
+<li>Humanities</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>TVL</h3>
+<p><strong>Technical-Vocational-Livelihood</strong></p>
+<p>Focuses on practical skills and technical training
+that may prepare students for employment or entrepreneurship.</p>
+<ul>
+<li>Technical Skills</li>
+<li>Practical Training</li>
+<li>Work Preparation</li>
+<li>Skills Development</li>
+</ul>
+</div>
+  
+  <div class="card">
+<h3>TVL</h3>
+<p><strong>Technical-Vocational-Livelihood</strong></p>
+<p>Focuses on practical skills and technical training
+that may prepare students for employment or entrepreneurship.</p>
+<ul>
+<li>Technical Skills</li>
+<li>Practical Training</li>
+<li>Work Preparation</li>
+<li>Skills Development</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>TECH-PRO</h3>
+<p><strong>Technology and Professional-related Interests</strong></p>
+<p>This category is included as an interest area in this
+prototype. It is not presented as an official DepEd strand.
+Students should check the school's actual program offerings.</p>
+<ul>
+<li>Computer Skills</li>
+<li>Digital Tools</li>
+<li>Technology</li>
+<li>Programming Interests</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- SUBJECTS PAGE -->
+<section id="subjects" class="page">
+<h2 class="section-title">Subjects and Learning Areas</h2>
+
+<p class="intro">
+Each strand has specialized subjects that help students develop
+knowledge and skills related to their chosen pathway. Actual
+subject offerings may vary depending on the school's curriculum.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>STEM Subjects</h3>
+<ul>
+<li>Pre-Calculus</li>
+<li>Basic Calculus</li>
+<li>General Biology</li>
+<li>General Chemistry</li>
+<li>General Physics</li>
+<li>Research</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ABM Subjects</h3>
+<ul>
+<li>Business Mathematics</li>
+<li>Fundamentals of Accountancy</li>
+<li>Business Finance</li>
+<li>Organization and Management</li>
+<li>Marketing</li>
+<li>Applied Economics</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>HUMSS Subjects</h3>
+<ul>
+<li>Creative Writing</li>
+<li>Creative Nonfiction</li>
+<li>Philippine Politics</li>
+<li>Community Engagement</li>
+<li>Introduction to World Religions</li>
+<li>Social Sciences</li>
+</ul>
+</div>
+  
+  <div class="card">
+<h3>TVL Learning Areas</h3>
+<ul>
+<li>Technical Skills Training</li>
+<li>Work Immersion</li>
+<li>Practical Applications</li>
+<li>Entrepreneurship</li>
+<li>Specialized Competencies</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Technology-related Learning</h3>
+<ul>
+<li>Computer Fundamentals</li>
+<li>Digital Literacy</li>
+<li>Programming Concepts</li>
+<li>Problem-Solving</li>
+<li>Technology Applications</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- COLLEGE COURSES PAGE -->
+<section id="courses" class="page">
+<h2 class="section-title">Possible College Courses</h2>
+
+<p class="intro">
+Your Senior High School strand may help prepare you for certain
+college programs. However, students may choose different courses
+depending on admission requirements and their interests.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>STEM-Related Courses</h3>
+<ul>
+<li>BS Architecture</li>
+<li>BS Civil Engineering</li>
+<li>BS Information Technology</li>
+<li>BS Nursing</li>
+<li>BS Biology</li>
+<li>BS Mathematics</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ABM-Related Courses</h3>
+<ul>
+<li>BS Accountancy</li>
+<li>BS Business Administration</li>
+<li>BS Entrepreneurship</li>
+<li>BS Marketing Management</li>
+<li>BS Financial Management</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>HUMSS-Related Courses</h3>
+<ul>
+<li>BA Communication</li>
+<li>BA Political Science</li>
+<li>BS Psychology</li>
+<li>BA English</li>
+<li>BS Social Work</li>
+<li>BA Journalism</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>TVL-Related Courses</h3>
+<ul>
+<li>BS Hospitality Management</li>
+<li>BS Tourism Management</li>
+<li>BS Information Technology</li>
+<li>Technical and Vocational Programs</li>
+<li>Other skills-based programs</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Technology-Related Courses</h3>
+<ul>
+<li>BS Information Technology</li>
+<li>BS Computer Science</li>
+<li>BS Information Systems</li>
+<li>Computer Engineering</li>
+<li>Multimedia Arts</li>
+</ul>
+</div>
+</div>
+</section>
+  
+  <!-- CAREERS PAGE -->
+<section id="careers" class="page">
+<h2 class="section-title">Possible Career Opportunities</h2>
+
+<p class="intro">
+Exploring career options can help students understand how their
+interests and educational choices may connect to future work.
+These are examples, not guaranteed career outcomes.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>STEM Careers</h3>
+<ul>
+<li>Engineer</li>
+<li>Architect</li>
+<li>Scientist</li>
+<li>Medical Professional</li>
+<li>Researcher</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ABM Careers</h3>
+<ul>
+<li>Accountant</li>
+<li>Business Manager</li>
+<li>Entrepreneur</li>
+<li>Financial Analyst</li>
+<li>Marketing Specialist</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>HUMSS Careers</h3>
+<ul>
+<li>Teacher</li>
+<li>Journalist</li>
+<li>Social Worker</li>
+<li>Public Relations Specialist</li>
+<li>Community Development Worker</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>TVL Careers</h3>
+<ul>
+<li>Cook or Food Service Worker</li>
+<li>Hotel Staff</li>
+<li>Technician</li>
+<li>Skilled Worker</li>
+<li>Entrepreneur</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Technology Careers</h3>
+<ul>
+<li>Web Developer</li>
+<li>Programmer</li>
+<li>IT Support Specialist</li>
+<li>Computer Technician</li>
+<li>Software Developer</li>
+</ul>
+</div>
+</div>
+</section>
+  
+  <!-- INFORMATION PAGE -->
+<section id="information" class="page">
+<h2 class="section-title">About CareerPath</h2>
+
+<p class="intro">
+CareerPath is a student-oriented strand exploration portal designed
+to provide Grade 10 students with accessible information about
+Senior High School pathways, subjects, possible college courses,
+and career opportunities.
+</p>
+
+<div class="card">
+<h3>Purpose of the Website</h3>
+<p>
+The website aims to help students become more informed about
+their educational choices by presenting strand-related
+information in an organized and accessible format.
+</p>
+</div>
+
+<div class="card" style="margin-top:18px">
+<h3>Frequently Asked Questions</h3>
+
+<p><strong>1. What is a Senior High School strand?</strong></p>
+<p>A strand is an educational pathway that allows students to
+focus on learning areas connected to their interests and goals.</p>
+
+<br>
+
+<p><strong>2. Does the assessment decide my future strand?</strong></p>
+<p>No. It only provides a suggested area to explore. The final
+decision should also consider your interests, goals, and guidance
+from teachers and family.</p>
+
+<br>
+
+<p><strong>3. Can I take a college course that is different from
+my strand?</strong></p>
+<p>College admission requirements vary by institution and program.
+Check the requirements of the college you plan to attend.</p>
+
+<br>
+
+<p><strong>4. Where can I confirm the strands offered by MNHS?</strong></p>
+<p>Ask the school's guidance office or official school
+representatives for the current list of available programs.</p>
+</div>
+  
+  <div class="notice">
+<strong>Important:</strong> This website is an educational prototype.
+Its strand descriptions and examples should be reviewed and updated
+based on the school's official information before actual use.
+</div>
+</section>
+
+<footer>
+<strong>CareerPath | Minuyan National High School</strong>
+<p>Senior High School Strand Exploration Portal</p>
+  <p>Developers:</p>
+  <p>Dedoyco   Lorenzo   Trillanes</p>
+<p>Designed to guide Grade 10 students in exploring their future pathways.</p>
+<p>© 2026 CareerPath. All Rights Reserved.</p>
+</footer>
+
+</div>
+
+<script>
+/* LOGIN FUNCTION */
+
+function login(event) {
+event.preventDefault();
+
+const name = document.getElementById("studentName").value.trim();
+
+if (name === "") {
+alert("Please enter your name.");
+return;
+}
+
+localStorage.setItem("careerpath_student", name);
+
+document.getElementById("loginScreen").style.display = "none";
+document.getElementById("website").style.display = "block";
+
+document.getElementById("welcomeName").textContent = name;
+}
+
+/* CHECK LOGIN */
+
+window.addEventListener("load", function() {
+const savedName = localStorage.getItem("careerpath_student");
+
+if (savedName) {
+document.getElementById("loginScreen").style.display = "none";
+document.getElementById("website").style.display = "block";
+document.getElementById("welcomeName").textContent = savedName;
+}
+});
+
+/* NAVIGATION */
+
+function showPage(pageId, button) {
+const pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page) {
+page.classList.remove("active");
+});
+
+document.getElementById(pageId).classList.add("active");
+
+const navButtons = document.querySelectorAll("nav button");
+
+navButtons.forEach(function(navButton) {
+navButton.classList.remove("active");
+});
+
+if (button) {
+button.classList.add("active");
+}
+  
+  window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+}
+
+/* LOG OUT */
+
+function logout() {
+const confirmLogout = confirm("Are you sure you want to log out?");
+
+if (confirmLogout) {
+localStorage.removeItem("careerpath_student");
+document.getElementById("website").style.display = "none";
+document.getElementById("loginScreen").style.display = "flex";
+document.getElementById("studentName").value = "";
+}
+}
+
+/* STRAND ASSESSMENT */
+
+document.getElementById("assessmentForm").addEventListener("submit", function(event) {
+event.preventDefault();
+
+const formData = new FormData(this);
+
+const scores = {
+STEM: 0,
+ABM: 0,
+HUMSS: 0,
+TVL: 0,
+TECHPRO: 0
+};
+
+for (let i = 1; i <= 9; i++) {
+const answer = formData.get("q" + i);
+
+if (answer && scores.hasOwnProperty(answer)) {
+scores[answer]++;
+}
+}
+
+const highestScore = Math.max(...Object.values(scores));
+
+const recommendations = Object.keys(scores).filter(function(strand) {
+return scores[strand] === highestScore;
+});
+
+const descriptions = {
+STEM: "You may enjoy activities involving science, mathematics, research, and problem-solving. Explore the STEM strand to learn more.",
+ABM: "You may be interested in business, accounting, financial planning, and management. Explore the ABM strand to learn more.",
+HUMSS: "You may enjoy communication, writing, social studies, and understanding people and communities. Explore the HUMSS strand to learn more.",
+TVL: "You may prefer hands-on learning, practical activities, and technical skill development. Explore the TVL pathway to learn more.",
+TECHPRO: "You may be interested in computers, digital tools, and technology-related activities. Explore available technology-related programs to learn more."
+};
+
+const result = document.getElementById("assessmentResult");
+
+let resultHTML = "<h3>Your Assessment Result</h3>";
+
+recommendations.forEach(function(strand) {
+resultHTML += "<p><strong>" + strand + "</strong></p>";
+resultHTML += "<p>" + descriptions[strand] + "</p>";
+});
+
+resultHTML += "<br><p><strong>Remember:</strong> This result is only a guide based on your answers. It is not a formal aptitude test or a final recommendation. Consider your own goals and ask for guidance before choosing a strand.</p>";
+  result.innerHTML = resultHTML;
+result.style.display = "block";
+
+result.scrollIntoView({
+behavior: "smooth",
+block: "start"
+});
+});
+</script>
+
+</body>
+</html>
+  
